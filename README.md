@@ -50,7 +50,11 @@
   <h1>Inovação CodeStation - Escola de Tecnologia e Desenvolvimento</h1>
 
   <form id="cadastroForm">
-    <label>Nome completo:
+    <div style="border: 1px solid #ccc; padding: 16px; border-radius: 8px; background-color: #f9f9f9;">
+  <strong>📌 Atenção:</strong><br>
+  Este projeto está em desenvolvimento. Contribuições são bem-vindas!
+</div>
+<label>Nome completo:
       <input type="text" id="nome" required>
     </label>
     <label>Data de nascimento:
