@@ -54,7 +54,7 @@
   <strong>📌 Atenção:</strong><br>
   Este projeto está em desenvolvimento. Contribuições são bem-vindas!
 </div>
-<label>Nome completo:
+<label>Nome completo:<span style="color: red">*</span>
       <input type="text" id="nome" required>
     </label>
     <label>Data de nascimento:
