@@ -105,3 +105,55 @@
 
   <div class="modal" id="modalSucesso">
     <div class="modal-content">
+      <p>📨 Dados enviados com sucesso!</p>
+      <button onclick="fecharModal()">OK</button>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('cadastroForm');
+    const btnEnviar = document.getElementById('btnEnviar');
+    const modal = document.getElementById('modalSucesso');
+
+    const campos = [
+      'nome', 'dataNascimento', 'cpf', 'email', 'telefone',
+      'rua', 'numero', 'bairro', 'cidade', 'estado', 'cep',
+      'genero', 'escolaridade', 'area', 'comoConheceu'
+    ];
+
+    campos.forEach(id => {
+      document.getElementById(id).addEventListener('input', validarFormulario);
+    });
+
+    function validarFormulario() {
+      const todosPreenchidos = campos.every(id => {
+        const valor = document.getElementById(id).value.trim();
+        return valor !== '';
+      });
+
+      const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(document.getElementById('email').value);
+      const cpfValido = /^\d{11}$/.test(document.getElementById('cpf').value);
+      const telValido = /^\d{10,11}$/.test(document.getElementById('telefone').value);
+      const cepValido = /^\d{8}$/.test(document.getElementById('cep').value);
+
+      if (todosPreenchidos && emailValido && cpfValido && telValido && cepValido) {
+        btnEnviar.disabled = false;
+      } else {
+        btnEnviar.disabled = true;
+      }
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      modal.style.display = 'flex';
+      form.reset();
+      btnEnviar.disabled = true;
+    });
+
+    function fecharModal() {
+      modal.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
+
