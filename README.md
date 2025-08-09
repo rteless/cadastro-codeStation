@@ -1,3 +1,8 @@
+Este documento tem que ser melhorado todos os dias.
+  -Tarefas:
+    - subir ele por git bash
+    - editar o codigo para poder facilitar a leitura 
+    - inserir imgans e poder fazer teste com ele de Funicional e Não funicional.
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
